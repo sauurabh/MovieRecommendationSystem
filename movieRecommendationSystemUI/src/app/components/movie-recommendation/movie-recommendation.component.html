@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+<div class="ms-3">
+    <div class="input-group">
+        <div class="form-outline">
+            <input type="search" id="form1" class="form-control" [(ngModel)]="movieName"
+                (change)="filterMovies(movieName)" />
+        </div>
+        <button type="button" class="btn btn-dark ms-1" (click)="getRecommendation()">
+            <i class="fa fa-search"></i>
+        </button>
+
+    </div>
+    <ul class="list-group mt-3" *ngIf="searched">
+        <li class="list-group-item" *ngFor="let movie of displayedMovies" (click)="updateMovieName(movie)">{{ movie }}
+        </li>
+    </ul>
+    <!-- <div class="movieCollection">
+        <div *ngFor="let rm of recommendedMovies" class="movieCard">
+            <h3 class="fw-bold card-title">{{rm.title}}</h3>
+            <img [src]=" 'http://image.tmdb.org/t/p/w500/' + rm.poster_path" alt="" class="poster">
+        </div>
+    </div> -->
+    <div class="movieCollection">
+        <div *ngFor="let rm of recommendedMovies" class="movieCard">
+            <div class="card" style="width: 12rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{rm.title}}</h5>
+                </div>
+                <img class="card-img-top" [src]=" 'http://image.tmdb.org/t/p/w500/' + rm.poster_path"
+                    alt="Card image cap">
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

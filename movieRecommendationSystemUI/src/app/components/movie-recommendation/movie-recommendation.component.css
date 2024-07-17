@@ -1,0 +1,35 @@
+.poster {
+    max-width: 10rem;
+}
+
+.movieCollection {
+    display: flex;
+    width: fit-content;
+    overflow: hidden;
+}
+
+.movieCard {
+    border: .02rem solid black;
+    padding: 1rem;
+    margin: 2rem;
+    background-color: rgb(45, 45, 45);
+    color: white;
+
+}
+
+.list-group-item {
+    width: 17rem;
+}
+
+button {
+    height: 2.5rem;
+}
+
+.input-group {
+    margin-left: 30%;
+}
+
+.list-group {
+    margin-left: 30%;
+
+}
