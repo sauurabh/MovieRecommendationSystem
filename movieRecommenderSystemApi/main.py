@@ -30,7 +30,7 @@ def recommend_movie(movieName):
     recommendedMovie = []
 
     for i in movieList:
-        filteredMovie=requests.get(f"https://api.themoviedb.org/3/movie/{moviesDf.iloc[i[0]].movie_id}?api_key=56ccf625f7acd85d3b0b80f8cb58f9e6&language=en-US").json()
+        filteredMovie=requests.get(f"https://api.themoviedb.org/3/movie/{moviesDf.iloc[i[0]].movie_id}?api_key={}&language=en-US").json()
         filteredMovieOut={
             "title": filteredMovie.get('title'),
             "poster_path": filteredMovie.get('poster_path')
